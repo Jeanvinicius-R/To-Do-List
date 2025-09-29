@@ -43,14 +43,15 @@ export default function App() {
   );
 
   return (
-    <div>
+    <div style={styles.container}>
       <h1>Minha To-Do List</h1>
-      <div>
+      <div style = {styles.container}>
         <input
           type="text"
           placeholder="Digite uma nova tarefa"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)} // "e" é referenciado ao Input/estímulo de evento
+          style = {styles.input}
         />
         <button onClick={addTask}>Adicionar</button>
       </div>
@@ -68,6 +69,7 @@ export default function App() {
           placeholder = "Digite/Escolha uma data"
           value = {datadia}
           onChange = {(e) => setDatadia (e.target.value)}
+          style = {styles.inputdh}
         />
       </div>
 
