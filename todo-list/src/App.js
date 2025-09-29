@@ -45,6 +45,10 @@ export default function App() {
   );
 
 
+  // Função que mostra/esconde a Lista
+  const showList = () => {
+    setVisivel(!visivel);
+  }
 
   return (
     <div style={styles.container}>
@@ -58,6 +62,7 @@ export default function App() {
           style = {styles.input}
         />
         <button onClick={addTask}>Adicionar</button>
+        <button onClick={showList}>Lista</button>
       </div>
 
       <div marginTop = "20">
@@ -77,8 +82,17 @@ export default function App() {
         />
       </div>
 
-      <div>
-        <TodoList todos={todos} removeTask={removeTask} />
+      <div styles = {{
+        height: "500px",
+        overflowY: "scrool",
+        border: "1px solid #ccc",
+        padding: "10px",
+        marginTop:"20px"
+      }}> 
+        {  
+          visivel && <TodoList todos={todos} removeTask={removeTask} />
+        }
+      
       </div>
 
     </div>
