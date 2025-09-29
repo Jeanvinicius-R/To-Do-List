@@ -7,6 +7,8 @@ export default function App() {
   // Variável de estado que guarda todas atividades
   const [todos, setTodos] = useState([]); // [] -> Lista, Array
 
+  const [visivel, setVisivel] = useState(true);
+
   // Variável de estado - Relativo à tarefa
   const [newTask, setNewTask] = useState(""); // " " -> Tarefa, Texto
 
@@ -41,6 +43,8 @@ export default function App() {
   const removeTask = (id) => (
     setTodos(todos.filter((todo) => todo.id !== id)) // Filtra 'to-dos'
   );
+
+
 
   return (
     <div style={styles.container}>
